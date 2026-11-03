@@ -6,6 +6,7 @@ export default {
     orders: '注文',
     finance: '財務',
     demandForecast: '需要予測',
+    restocking: '補充発注',
     companyName: '触媒コンポーネンツ',
     subtitle: '在庫管理システム'
   },
@@ -56,6 +57,37 @@ export default {
       priority: '優先度',
       unitsShort: '単位不足',
       days: '日'
+    },
+    purchaseOrder: {
+      createTitle: '発注書の作成',
+      viewTitle: '発注書',
+      orderId: '注文ID',
+      sku: 'SKU',
+      itemName: '品目',
+      shortage: '不足',
+      units: '単位',
+      supplierName: '仕入先名',
+      quantity: '数量',
+      unitCost: '単価 (USD)',
+      expectedDelivery: '納品予定日',
+      notes: '備考',
+      total: '合計金額',
+      poId: '発注番号',
+      status: 'ステータス',
+      createdDate: '作成日',
+      submit: '発注書を作成',
+      saving: '保存中...',
+      loading: '発注書を読み込み中...',
+      loadFailed: '発注書の読み込みに失敗しました。',
+      saveFailed: '発注書の作成に失敗しました。',
+      errSupplierRequired: '仕入先名は必須です。',
+      errSupplierLength: '仕入先名は200文字以内で入力してください。',
+      errQuantity: '数量は0より大きい整数で入力してください。',
+      errUnitCost: '単価は0より大きい値で入力してください。',
+      errDate: '有効な納品予定日を入力してください。',
+      errDatePast: '納品予定日は過去の日付にできません。',
+      errNotes: '備考は1000文字以内で入力してください。',
+      noNotes: 'なし'
     },
     topProducts: {
       title: '収益別トップ製品',
@@ -112,6 +144,11 @@ export default {
     onTimeDelivery: '定時配達',
     itemsCount: '{count}件',
     quantity: '数量',
+    submittedOrders: '発注済み注文',
+    leadTime: 'リードタイム',
+    leadTimeDays: '{count}日',
+    noSubmittedOrders: '送信済みの補充発注はまだありません。',
+    submittedDate: '発注日',
     table: {
       orderNumber: '注文番号',
       orderId: '注文ID',
@@ -186,6 +223,37 @@ export default {
       trend: 'トレンド',
       period: '期間'
     }
+  },
+
+  // Restocking
+  restocking: {
+    title: '補充発注',
+    description: '予算を設定すると、需要ギャップの大きい順に推奨発注数量が表示されます',
+    budgetTitle: '補充予算',
+    budgetLabel: '予算',
+    budgetSliderLabel: '補充予算',
+    plannedSpend: '計画支出',
+    remaining: '残額',
+    longestLeadTime: '最長リードタイム',
+    recommendedItems: '推奨品目',
+    days: '{count}日',
+    table: {
+      sku: 'SKU',
+      itemName: '品目名',
+      trend: 'トレンド',
+      demandGap: '需要ギャップ',
+      quantity: '数量',
+      unitCost: '単価',
+      lineTotal: '小計',
+      leadTime: 'リードタイム'
+    },
+    placeOrder: '発注する',
+    placingOrder: '発注中...',
+    orderPlaced: '注文 {orderNumber} を発注しました。合計 {total}、配達予定日 {date}。',
+    orderFailed: '発注に失敗しました。もう一度お試しください。',
+    loadFailed: '補充の推奨データを読み込めませんでした',
+    noItems: 'この予算では発注できる品目がありません。予算を増やすと推奨が表示されます。',
+    viewOrders: '注文を表示'
   },
 
   // Filters
