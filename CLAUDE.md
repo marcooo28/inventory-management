@@ -54,6 +54,10 @@ npm install && npm run dev
 - `GET /api/dashboard/summary` - All filters
 - `GET /api/demand`, `/api/backlog` - No filters
 - `GET /api/spending/*` - Summary, monthly, categories, transactions
+- `GET /api/restocking/recommendations?budget=` - Forecast items to restock within a budget (greedy by demand gap)
+- `POST /api/restocking/orders` - Submit a restocking order (prices come from the server); `GET` lists them, newest first
+- `POST /api/purchase-orders` - Raise a PO for a backlog item (one per item, 409 on a second); `GET /api/purchase-orders/{backlog_item_id}` reads it
+- `GET/POST /api/tasks`, `PATCH/DELETE /api/tasks/{id}` - In-memory user tasks (PATCH toggles pending/completed)
 
 ## Common Issues
 1. Use unique keys in v-for (not `index`) - use `sku`, `month`, etc.
@@ -74,3 +78,6 @@ npm install && npm run dev
 - Status: green/blue/yellow/red
 - Charts: Custom SVG, CSS Grid for layouts
 - No emojis in UI
+
+## Code Conventions
+- Always document non-obvious logic changes with comments

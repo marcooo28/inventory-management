@@ -35,5 +35,13 @@ recent_transactions = load_json_file('transactions.json')
 # Load purchase orders
 purchase_orders = load_json_file('purchase_orders.json')
 
+# Restocking orders submitted at runtime. In-memory only (reset on restart).
+# Routes must mutate this list in place (append) - main.py imports it by name,
+# so rebinding it here or there would silently desync the two modules.
+restocking_orders = []
+
+# User tasks created at runtime (same in-place mutation rule as above)
+tasks = []
+
 # All data is now loaded from JSON files in the data/ directory
 # This allows for easier maintenance and updates of the sample data

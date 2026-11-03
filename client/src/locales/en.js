@@ -6,6 +6,7 @@ export default {
     orders: 'Orders',
     finance: 'Finance',
     demandForecast: 'Demand Forecast',
+    restocking: 'Restocking',
     companyName: 'Catalyst Components',
     subtitle: 'Inventory Management System'
   },
@@ -56,6 +57,37 @@ export default {
       priority: 'Priority',
       unitsShort: 'units short',
       days: 'days'
+    },
+    purchaseOrder: {
+      createTitle: 'Create Purchase Order',
+      viewTitle: 'Purchase Order',
+      orderId: 'Order ID',
+      sku: 'SKU',
+      itemName: 'Item',
+      shortage: 'Shortage',
+      units: 'units',
+      supplierName: 'Supplier Name',
+      quantity: 'Quantity',
+      unitCost: 'Unit Cost (USD)',
+      expectedDelivery: 'Expected Delivery Date',
+      notes: 'Notes',
+      total: 'Total Cost',
+      poId: 'PO Number',
+      status: 'Status',
+      createdDate: 'Created',
+      submit: 'Create Purchase Order',
+      saving: 'Saving...',
+      loading: 'Loading purchase order...',
+      loadFailed: 'Failed to load the purchase order.',
+      saveFailed: 'Failed to create the purchase order.',
+      errSupplierRequired: 'Supplier name is required.',
+      errSupplierLength: 'Supplier name must be 200 characters or fewer.',
+      errQuantity: 'Quantity must be a whole number greater than 0.',
+      errUnitCost: 'Unit cost must be greater than 0.',
+      errDate: 'Enter a valid delivery date.',
+      errDatePast: 'Delivery date cannot be in the past.',
+      errNotes: 'Notes must be 1000 characters or fewer.',
+      noNotes: 'None'
     },
     topProducts: {
       title: 'Top Products by Revenue',
@@ -112,6 +144,11 @@ export default {
     onTimeDelivery: 'On-Time Delivery',
     itemsCount: '{count} items',
     quantity: 'Qty',
+    submittedOrders: 'Submitted Orders',
+    leadTime: 'Lead Time',
+    leadTimeDays: '{count} days',
+    noSubmittedOrders: 'No restocking orders have been submitted yet.',
+    submittedDate: 'Submitted',
     table: {
       orderNumber: 'Order Number',
       orderId: 'Order ID',
@@ -186,6 +223,37 @@ export default {
       trend: 'Trend',
       period: 'Period'
     }
+  },
+
+  // Restocking
+  restocking: {
+    title: 'Restocking',
+    description: 'Set a budget and get recommended reorder quantities, prioritized by demand gap',
+    budgetTitle: 'Restocking Budget',
+    budgetLabel: 'Budget',
+    budgetSliderLabel: 'Restocking budget',
+    plannedSpend: 'Planned Spend',
+    remaining: 'Remaining',
+    longestLeadTime: 'Longest Lead Time',
+    recommendedItems: 'Recommended Items',
+    days: '{count} days',
+    table: {
+      sku: 'SKU',
+      itemName: 'Item Name',
+      trend: 'Trend',
+      demandGap: 'Demand Gap',
+      quantity: 'Quantity',
+      unitCost: 'Unit Cost',
+      lineTotal: 'Line Total',
+      leadTime: 'Lead Time'
+    },
+    placeOrder: 'Place Order',
+    placingOrder: 'Placing order...',
+    orderPlaced: 'Order {orderNumber} placed. Total {total}, expected delivery {date}.',
+    orderFailed: 'Failed to place the order. Please try again.',
+    loadFailed: 'Failed to load restocking recommendations',
+    noItems: 'This budget does not fund any items. Increase the budget to see recommendations.',
+    viewOrders: 'View orders'
   },
 
   // Filters

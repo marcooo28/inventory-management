@@ -12,6 +12,28 @@ server_path = Path(__file__).parent.parent.parent / "server"
 sys.path.insert(0, str(server_path))
 
 from main import app
+from mock_data import restocking_orders, tasks, purchase_orders
+
+# Purchase orders start from JSON seed data, so restore that instead of emptying
+SEED_PURCHASE_ORDERS = list(purchase_orders)
+
+
+@pytest.fixture(autouse=True)
+def reset_runtime_state():
+    """Reset the in-memory lists that POST/PATCH/DELETE mutate around every test.
+
+    The lists are module-level and shared for the whole pytest session, so a
+    write in one test would otherwise leak into the next. Reset them in place:
+    main.py holds a reference to these exact list objects.
+    """
+    def reset():
+        restocking_orders.clear()
+        tasks.clear()
+        purchase_orders[:] = SEED_PURCHASE_ORDERS
+
+    reset()
+    yield
+    reset()
 
 
 @pytest.fixture
